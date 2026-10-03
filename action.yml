@@ -11,7 +11,7 @@ inputs:
   domain:
     description: |
       A comma-seperated list of domains of the Octo STS instances to use to federate.
-    default: y7xnonp7s43xkv33gma5njfvui0owwqf.lambda-url.eu-central-1.on.aws,octo-sts.dev
+    default: octo-sts.dev
 
   scope:
     description: |
