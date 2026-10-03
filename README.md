@@ -17,7 +17,7 @@ steps:
   with:
     scope: your-org/your-repo
     identity: foo
-    self_hosted_domain: ${{ secrets.OCTO_STS_DOMAIN }}
+    domain: ${{ secrets.OCTO_STS_DOMAIN }}
 
 - env:
     GITHUB_TOKEN: ${{ steps.octo-sts.outputs.token }}
@@ -30,7 +30,7 @@ the repository `your-org/your-repo`.  Suppose this contains the following, then
 workflows in `my-org/my-repo` will receive a token with the specified
 permissions on `my-org/my-repo`.
 
-The `self_hosted_domain` input is the domain to the self-hosted instance. We have a organization-wide secret, which always contains the current domain.
+The optional `domain` input accepts a comma-separated list of self-hosted instances. The official `octo-sts.dev` service is used by default and remains the final fallback when custom domains are supplied.
 
 ```yaml
 issuer: https://token.actions.githubusercontent.com
